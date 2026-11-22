@@ -1,0 +1,33 @@
+
+[
+  {
+    "id": 1,
+    "producto": "Laptop",
+    "categoria": "Tecnología",
+    "ventas": 15000
+  },
+  {
+    "id": 2,
+    "producto": "Monitor",
+    "categoria": "Tecnología",
+    "ventas": 8500
+  },
+  {
+    "id": 3,
+    "producto": "Teclado",
+    "categoria": "Accesorios",
+    "ventas": 2500
+  },
+  {
+    "id": 4,
+    "producto": "Mouse",
+    "categoria": "Accesorios",
+    "ventas": 1500
+  },
+  {
+    "id": 5,
+    "producto": "Impresora",
+    "categoria": "Oficina",
+    "ventas": 6500
+  }
+]

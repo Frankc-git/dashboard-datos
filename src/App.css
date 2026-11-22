@@ -1,75 +1,213 @@
 
+/* Contenedor principal */
+.app {
+  min-height: 100vh;
+}
+
+/* Barra de navegación */
 .navbar {
-  background: linear-gradient(135deg, #0d2847, #087e8b);
+  background: linear-gradient(90deg, #103b5c, #087f8c);
   color: white;
-  padding: 25px 40px;
+  padding: 20px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  flex-wrap: wrap;
-  box-shadow: 0 4px 12px #00000020;
 }
 
 .navbar-brand h1 {
   margin: 0;
-  font-size: 28px;
+  font-size: 24px;
 }
 
 .navbar-brand p {
-  margin: 8px 0 0;
-  font-size: 14px;
-  color: #cce7f0;
+  margin: 5px 0 0;
+  font-size: 13px;
 }
 
 .navbar-user {
-  background: #ffffff20;
-  padding: 12px 20px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 18px;
+  border-radius: 8px;
 }
 
-.navbar-user span {
-  font-size: 12px;
-  color: #cce7f0;
-}
-
+.navbar-user span,
 .navbar-user strong {
-  font-size: 16px;
+  display: block;
 }
 
+/* Contenido */
 .contenido {
-  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 35px 25px;
 }
 
 .contenido h2 {
-  color: #0d2847;
-  font-size: 30px;
+  color: #103b5c;
+  margin-bottom: 10px;
 }
 
-.contenido p {
+.contenido > p {
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+/* Tarjetas de métricas */
+.contenedor-metricas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.tarjeta-metrica {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 5px solid #0891b2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta-metrica h3 {
+  color: #475569;
+  font-size: 16px;
+  margin: 0 0 15px;
+}
+
+.valor-metrica {
+  font-size: 32px;
+  font-weight: bold;
+  color: #103b5c;
+  margin: 0 0 10px;
+}
+
+.descripcion-metrica {
+  font-size: 13px;
   color: #64748b;
 }
 
-.tarjeta {
+/* Tabla de datos */
+.contenedor-tabla {
   background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+}
+
+.contenedor-tabla h3 {
+  color: #103b5c;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.tabla-datos {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-datos th {
+  background: #103b5c;
+  color: white;
+  padding: 14px;
+  text-align: left;
+}
+
+.tabla-datos td {
+  padding: 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tabla-datos tbody tr:hover {
+  background: #f1f5f9;
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contenedor-metricas {
+    grid-template-columns: 1fr;
+  }
+
+  .contenido {
+    padding: 20px 15px;
+  }
+}
+
+/* Panel de análisis meteorológico */
+.panel-analitico {
+  background: #ffffff;
   padding: 25px;
   margin-top: 30px;
   border-radius: 12px;
-  border-left: 5px solid #087e8b;
-  box-shadow: 0 4px 15px #00000010;
-  max-width: 450px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.tarjeta h3 {
-  color: #0d2847;
-  margin-top: 0;
+.panel-analitico h2 {
+  color: #123b5d;
+  margin-bottom: 12px;
 }
 
-.estado {
-  color: #16a34a;
-  font-weight: bold;
-  font-size: 14px;
+.panel-analitico p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.panel-analitico button {
+  background: #0785a3;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.panel-analitico button:hover:not(:disabled) {
+  background: #05657d;
+}
+
+.panel-analitico button:disabled {
+  background: #91aeb7;
+  cursor: not-allowed;
+}
+
+.panel-analitico h3 {
+  color: #123b5d;
+  margin-bottom: 15px;
+}
+
+.panel-analitico .tabla-datos {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.panel-analitico .tabla-datos th,
+.panel-analitico .tabla-datos td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.panel-analitico .tabla-datos tr:hover {
+  background: #f1f7fa;
+}
+
+@media (max-width: 768px) {
+  .panel-analitico {
+    padding: 15px;
+  }
+
+  .panel-analitico .tabla-datos th,
+  .panel-analitico .tabla-datos td {
+    padding: 10px;
+    font-size: 13px;
+  }
 }
